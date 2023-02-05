@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { OrganizerComponent } from './organizer/organizer.component';
+import { EventCardComponent } from './event-card/event-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
-    OrganizerComponent
+    OrganizerComponent,
+    EventCardComponent
   ],
   imports: [
     BrowserModule,
