@@ -1,4 +1,4 @@
-[
+export const EVENTS = [
     {
         "title": "Dinner at Blacksalt",
         "location": "4883 MacArthur Blvd NW, Washington, DC 20007",

@@ -1,4 +1,10 @@
 <h2>Welcome, [Name Here]</h2>
 <h3>Events</h3>
-
+<app-event-card *ngFor="let event of eventData;"
+    [title]="event.title" 
+    [date]="event.date"
+    [time]="event.time"
+    [details]="'information about the event'"
+    [region]="'somewhere in dc'"
+></app-event-card>
 

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import * as testData from '../../assets/fake_data/events.json';
+import { Component, OnInit } from '@angular/core';
+import { EVENTS } from '../../assets/fake_data/events';
 
 @Component({
   selector: 'app-organizer',
@@ -7,5 +7,8 @@ import * as testData from '../../assets/fake_data/events.json';
   styleUrls: ['./organizer.component.scss']
 })
 export class OrganizerComponent {
-  public eventData = testData;
+  public eventData = EVENTS;
+  
+  ngOnInit(){
+  }
 }
