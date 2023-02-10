@@ -1,5 +1,7 @@
 <h2>Welcome, [Name Here]</h2>
 <h3>Events</h3>
+<button>Create New Event</button>
+<app-events-form></app-events-form>
 <app-event-card *ngFor="let event of eventData;"
     [title]="event.title" 
     [date]="event.date"
