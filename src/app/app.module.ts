@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LandingComponent } from './landing/landing.component';
-import { OrganizerComponent } from './organizer/organizer.component';
-import { EventCardComponent } from './event-card/event-card.component';
+import { LandingComponent } from './pages/landing/landing.component';
+import { OrganizerComponent } from './pages/organizer/organizer.component';
+import { EventCardComponent } from './sections/event-card/event-card.component';
 
 @NgModule({
   declarations: [
