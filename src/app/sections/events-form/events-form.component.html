@@ -1,0 +1,26 @@
+<form [formGroup]="eventForm">
+    <label for="title">Title:</label>
+    <input id="title" type="text" formControlName="title">
+
+    <label for="date" type="date">Date:</label>
+    <input id="date" type="text" formControlName="date">
+
+    <label for="region">Region:</label>
+    <input id="region" type="text" formControlName="region">
+
+    <label for="location">Location:</label>
+    <input id="location" type="text" formControlName="location">
+
+    <label for="attendee-max">Attendee Max:</label>
+    <input id="attendee-max" type="text" formControlName="attendeeMax">
+
+    <label for="event-description">Event Description:</label>
+    <textarea 
+        name="event-description" 
+        id="event-description" 
+        cols="30" 
+        rows="10"
+        formControlName="eventDescription"
+    ></textarea>
+    <button (click)="onSubmit()">Submit</button>
+</form>
