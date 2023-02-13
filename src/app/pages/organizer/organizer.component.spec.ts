@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { OrganizerComponent } from './organizer.component';
+import { EventsFormComponent } from '../../sections/events-form/events-form.component';
+import { EventCardComponent } from 'src/app/sections/event-card/event-card.component';
 
 describe('OrganizerComponent', () => {
   let component: OrganizerComponent;
@@ -8,7 +11,8 @@ describe('OrganizerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OrganizerComponent ]
+      imports: [ReactiveFormsModule],
+      declarations: [ OrganizerComponent, EventsFormComponent, EventCardComponent ]
     })
     .compileComponents();
 
