@@ -8,6 +8,7 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { OrganizerComponent } from './pages/organizer/organizer.component';
 import { EventCardComponent } from './sections/event-card/event-card.component';
 import { EventsFormComponent } from './sections/events-form/events-form.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { EventsFormComponent } from './sections/events-form/events-form.componen
     LandingComponent,
     OrganizerComponent,
     EventCardComponent,
-    EventsFormComponent
+    EventsFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
