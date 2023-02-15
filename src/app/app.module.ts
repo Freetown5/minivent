@@ -8,7 +8,7 @@ import { LandingComponent } from './pages/landing/landing.component';
 import { OrganizerComponent } from './pages/organizer/organizer.component';
 import { EventCardComponent } from './sections/event-card/event-card.component';
 import { EventsFormComponent } from './sections/events-form/events-form.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
