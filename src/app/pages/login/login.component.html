@@ -1,0 +1,22 @@
+<main>
+    <h2>Login</h2>
+    <form [formGroup]="loginForm">
+        <section>
+            <input 
+                id="email" 
+                type="text" 
+                placeholder="email:" 
+                formControlName="email"
+            >
+        </section>
+        <section>
+            <input 
+                id="password" 
+                type="password" 
+                placeholder="password:" 
+                formControlName="password"
+            >
+        </section>
+        <button (click)="onSubmit()">Submit</button>
+    </form>
+</main>
