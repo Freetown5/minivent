@@ -19,7 +19,9 @@ export class EventsFormComponent {
   constructor(private formBuilder: FormBuilder){}
 
   onSubmit(){
-    // update to clear form when clicked
+    // update to clear and hide form when clicked as well as toggle parent
+    // component variable "eventToggle" to false on submit
+    
     // later update to send data to backend
     console.log(this.eventForm.value);
   }
