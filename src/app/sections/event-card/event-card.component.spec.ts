@@ -20,4 +20,29 @@ describe('EventCardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should set title', () => {
+    component.title = 'Title';
+    expect(component.title).toBe('Title');
+  });
+
+  it('should set date', () => {
+    component.date = '10/09/25';
+    expect(component.date).toBe('10/09/25');
+  });
+
+  it('should set time', () => {
+    component.time = '10am';
+    expect(component.time).toBe('10am');
+  });
+
+  it('should set details', () => {
+    component.details = 'Lorem Ipsum';
+    expect(component.details).toBe('Lorem Ipsum');
+  });
+
+  it('should set region', () => {
+    component.region = 'Soho';
+    expect(component.region).toBe('Soho');
+  });
 });
