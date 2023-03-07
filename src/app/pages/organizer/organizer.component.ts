@@ -16,4 +16,8 @@ export class OrganizerComponent {
   showEventForm(){
     this.eventToggle === false? this.eventToggle = true : this.eventToggle = false;
   }
+
+  hideOnSubmit(formSubmitted: boolean){
+    if(formSubmitted === true){ this.eventToggle = false};
+  }
 }

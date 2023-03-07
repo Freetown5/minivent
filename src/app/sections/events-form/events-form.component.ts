@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 
 @Component({
@@ -15,13 +15,15 @@ export class EventsFormComponent {
     attendeeMax: [''],
     eventDescription: ['']
   });
+
+  @Output() formSubmitted = new EventEmitter();
+  formClose: boolean = true;
   
   constructor(private formBuilder: FormBuilder){}
 
   onSubmit(){
     // update to clear and hide form when clicked as well as toggle parent
-    // component variable "eventToggle" to false on submit
-    
+    this.formSubmitted.emit(this.formClose);
     // later update to send data to backend
     console.log(this.eventForm.value);
   }
