@@ -28,4 +28,8 @@ export class OrganizerComponent {
   hideOnSubmit(formSubmitted: boolean){
     if(formSubmitted === true){ this.eventToggle = false};
   }
+
+  viewNewData(formData: object){
+    console.log(formData);
+  }
 }
