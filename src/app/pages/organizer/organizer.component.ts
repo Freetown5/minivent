@@ -7,11 +7,12 @@ import { EVENTS } from '../../../assets/fake_data/events';
   styleUrls: ['./organizer.component.scss']
 })
 export class OrganizerComponent {
-  public eventData = EVENTS; 
+  eventData = EVENTS; 
   // adding to this (EVENTS) would require figuring out how to add to a static json 
   // object outside of the actual app, not worth the effort unless it's to an
   // actual database
-  public eventToggle: boolean = false;
+  eventToggle: boolean = false;
+  formEventData: Array<object> = [];
   // The data should be emitted here when the submit button is clicked in the event
   // card
 
@@ -30,6 +31,7 @@ export class OrganizerComponent {
   }
 
   viewNewData(formData: object){
-    console.log(formData);
+    this.formEventData.push(formData);
+    console.log(this.formEventData);
   }
 }
