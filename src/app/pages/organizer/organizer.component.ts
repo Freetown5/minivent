@@ -7,8 +7,16 @@ import { EVENTS } from '../../../assets/fake_data/events';
   styleUrls: ['./organizer.component.scss']
 })
 export class OrganizerComponent {
-  public eventData = EVENTS;
+  public eventData = EVENTS; 
+  // adding to this (EVENTS) would require figuring out how to add to a static json 
+  // object outside of the actual app, not worth the effort unless it's to an
+  // actual database
   public eventToggle: boolean = false;
+  // The data should be emitted here when the submit button is clicked in the event
+  // card
+
+  // an empty object should be added here and should exist to contain all of the data
+  // sent by the eventForm component
   
   ngOnInit(){
   }

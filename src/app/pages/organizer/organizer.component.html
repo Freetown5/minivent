@@ -5,6 +5,9 @@
     <span *ngIf="eventToggle">Hide Event Form</span>
 </button>
 <app-events-form *ngIf="eventToggle" (formSubmitted)="hideOnSubmit($event)"></app-events-form>
+// add second event card here, that is only visable if there is data added to a second
+// object that contains data from the event form above (this will all to an extent need
+// to be reconfigured or removed when an actual database is added)
 <app-event-card *ngFor="let event of eventData;"
     [title]="event.title" 
     [date]="event.date"

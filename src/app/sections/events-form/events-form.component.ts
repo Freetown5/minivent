@@ -26,5 +26,13 @@ export class EventsFormComponent {
     this.formSubmitted.emit(this.formClose);
     // later update to send data to backend
     console.log(this.eventForm.value);
+    // the eventForm data above should be emitted and sent to the organizer 
+    // component from here 
   }
 }
+/**
+ * Event form data (this.eventForm.value) needs to be passed to the organizer component
+ * so that whatever is added to the form can be added to the page through an 
+ * implementation of the event-card component. This is another case for and 
+ * EventEmitter/Output decorator.
+ */
