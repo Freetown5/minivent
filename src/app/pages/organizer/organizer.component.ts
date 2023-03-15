@@ -9,18 +9,8 @@ import { eventInt } from 'src/app/sections/events-form/event-form.interface';
 })
 export class OrganizerComponent {
   eventData = EVENTS; 
-  // adding to this (EVENTS) would require figuring out how to add to a static json 
-  // object outside of the actual app, not worth the effort unless it's to an
-  // actual database
   eventToggle: boolean = false;
-  // formEventData: Array<object> = [];
   formEventData: Array<eventInt> = [];
-
-  // The data should be emitted here when the submit button is clicked in the event
-  // card
-
-  // an empty object should be added here and should exist to contain all of the data
-  // sent by the eventForm component
   
   ngOnInit(){
   }
@@ -35,6 +25,5 @@ export class OrganizerComponent {
 
   viewNewData(formData: object){
     this.formEventData.push(formData);
-    console.log(this.formEventData);
   }
 }
