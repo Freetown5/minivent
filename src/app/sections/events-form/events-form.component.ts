@@ -24,8 +24,6 @@ export class EventsFormComponent {
   constructor(private formBuilder: FormBuilder){}
 
   onSubmit(){
-    // update to clear and hide form when clicked
-
     this.formSubmitted.emit(this.formClose);
     this.submittedData.emit(this.eventForm.value);
 
