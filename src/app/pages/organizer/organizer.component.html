@@ -12,6 +12,14 @@
 <!-- add second event card here, that is only visable if there is data added to a second
 object that contains data from the event form above (this will all to an extent need
 to be reconfigured or removed when an actual database is added) -->
+<section *ngIf="formEventData.length > 0">
+    <app-event-card *ngFor="let newEvent of formEventData;" 
+        [title]="newEvent.title!"
+        [date]="newEvent.date!"
+        [time]="newEvent.time!"
+        [details]="newEvent.eventDescription!"
+        [region]="newEvent.region!"></app-event-card>
+</section>
 <app-event-card *ngFor="let event of eventData;"
     [title]="event.title" 
     [date]="event.date"

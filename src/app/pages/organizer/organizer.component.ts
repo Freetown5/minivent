@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EVENTS } from '../../../assets/fake_data/events';
+import { eventInt } from 'src/app/sections/events-form/event-form.interface';
 
 @Component({
   selector: 'app-organizer',
@@ -12,7 +13,9 @@ export class OrganizerComponent {
   // object outside of the actual app, not worth the effort unless it's to an
   // actual database
   eventToggle: boolean = false;
-  formEventData: Array<object> = [];
+  // formEventData: Array<object> = [];
+  formEventData: Array<eventInt> = [];
+
   // The data should be emitted here when the submit button is clicked in the event
   // card
 
@@ -27,7 +30,7 @@ export class OrganizerComponent {
   }
 
   hideOnSubmit(formSubmitted: boolean){
-    if(formSubmitted === true){ this.eventToggle = false};
+    if(formSubmitted === true){ this.eventToggle = false };
   }
 
   viewNewData(formData: object){
