@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
 export class EventCardComponent {
   @Input() title: string;
   @Input() date: string;
+  @Input() region: string;
   @Input() time: string;
   @Input() details: string;
-  @Input() region: string;
 }

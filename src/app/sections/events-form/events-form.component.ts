@@ -10,6 +10,7 @@ export class EventsFormComponent {
   eventForm = this.formBuilder.group({
     title: [''],
     date: [''],
+    time: [''],
     region: [''],
     location: [''],
     attendeeMax: [''],
