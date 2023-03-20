@@ -22,4 +22,18 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should add data to the login form', () => {
+    component.loginForm.controls['email'].setValue('test-user@gmail.com');
+    component.loginForm.controls['password'].setValue('@#PFE^60-!');
+
+    let testLoginForm = {
+      email: 'test-user@gmail.com',
+      password: '@#PFE^60-!'
+    }
+
+    component.onSubmit();
+
+    expect(component.loginForm.value).toEqual(testLoginForm);
+  })
 });
