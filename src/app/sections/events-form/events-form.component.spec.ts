@@ -61,9 +61,10 @@ describe('EventsFormComponent', () => {
     expect(eventDescStub.value).toEqual(description);
   });
 
-  it('should log event form data to the console', () => {
+  it('should add data to the event form', () => {
     component.eventForm.controls['title'].setValue('Ang');
     component.eventForm.controls['date'].setValue('07/02/2024');
+    component.eventForm.controls['time'].setValue('8:30am');
     component.eventForm.controls['region'].setValue('Soho');
     component.eventForm.controls['location'].setValue('New York, NY');
     component.eventForm.controls['attendeeMax'].setValue('9');
@@ -72,6 +73,7 @@ describe('EventsFormComponent', () => {
     let testEventForm = {
       title: 'Ang',
       date: '07/02/2024',
+      time: '8:30am',
       region: 'Soho',
       location: 'New York, NY',
       attendeeMax: '9',
