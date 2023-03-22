@@ -11,4 +11,12 @@ export class EventCardComponent {
   @Input() region: string;
   @Input() time: string;
   @Input() details: string;
+  @Input() attendees: Array<object>;
+
+  attendeesSum: number;
+
+  get attendeeTotal(){
+    this.attendeesSum = this.attendees.length;
+    return this.attendeesSum;
+  }
 }

@@ -45,4 +45,23 @@ describe('EventCardComponent', () => {
     component.region = 'Soho';
     expect(component.region).toBe('Soho');
   });
+
+  it('should set attendee number', () => {
+    let fakeAttendees = [
+      {
+        "avatar": "",
+        "name": "Ashley Z.",
+        "email": "random.string@gmail.com",
+        "lead": true 
+      },
+      {
+          "avatar": "",
+          "name": "Lena Q.",
+          "email": "random.number@gmail.com",
+          "lead": true
+      }
+    ]
+    component.attendees = fakeAttendees;
+    expect(component.attendees).toBe(fakeAttendees);
+  });
 });
