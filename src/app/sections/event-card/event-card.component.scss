@@ -2,10 +2,11 @@
     display: flex;
     flex-direction: row;
     width: 100%;
+    margin: 10px;
 
     &__image{
         width: 20%;
-        height: 150px;
+        height: 200px;
         background-color:aquamarine;
     }
 
