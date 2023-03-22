@@ -12,6 +12,7 @@ export class EventCardComponent {
   @Input() time: string;
   @Input() details: string;
   @Input() attendees: Array<object>;
+  @Input() attendeeMax: string;
 
   attendeesSum: number;
 

@@ -8,6 +8,7 @@ export const EVENTS = [
         "time": "7:00pm",
         "details": "Creative preparations of sustainable seafood served in an upscale tavern with take-out fish market.",
         "event-image": "",
+        "attendeeMax": "10",
         "attendees": [
             {
                 "avatar": "",
@@ -50,6 +51,7 @@ export const EVENTS = [
         "time": "11:30am",
         "details": "Slip into the relaxed neighborhood vibe at Dovetail, a contemporary bar and restaurant located on the first floor of Viceroy Washington, DC.",
         "event-image": "",
+        "attendeeMax": "8",
         "attendees": [
             {
                 "avatar": "",
@@ -80,6 +82,7 @@ export const EVENTS = [
         "time": "2:00pm",
         "details": "All aboard Georgetown’s new C&O Canal boat! Boat rides are available five days a week during our inaugural season, offering one-hour guided historical tours of the first mile of the Canal.",
         "event-image": "",
+        "attendeeMax": "7",
         "attendees": [
             {
                 "avatar": "",
