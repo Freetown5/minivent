@@ -66,9 +66,9 @@ describe('EventCardComponent', () => {
     expect(component.attendees).toBe(mockAttendees);
   });
 
-  // it('should get attendee total', () => {
-  //   component.attendees = mockAttendees;
-  //   component.attendeeTotal;
-  //   expect(component.attendeesSum).toBe(2); 
-  // });
+  it('should get attendee total', () => {
+    component.attendees = mockAttendees;
+    component.attendeeTotal;
+    expect(component.attendeesSum).toBe(2); 
+  });
 });
