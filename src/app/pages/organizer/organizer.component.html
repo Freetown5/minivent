@@ -17,7 +17,10 @@
         [date]="newEvent.date!"
         [time]="newEvent.time!"
         [details]="newEvent.eventDescription!"
-        [region]="newEvent.region!"></app-event-card>
+        [region]="newEvent.region!"
+        [attendees]="[{}]"
+        [attendeeMax]="newEvent.attendeeMax!"
+    ></app-event-card>
 </section>
 
 <app-event-card *ngFor="let event of eventData;"
@@ -26,4 +29,6 @@
     [time]="event.time"
     [details]="'information about the event'"
     [region]="'somewhere in dc'"
+    [attendees]="event.attendees"
+    [attendeeMax]="event.attendeeMax"
 ></app-event-card>
