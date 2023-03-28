@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-events-form',
@@ -8,13 +8,13 @@ import { FormBuilder } from '@angular/forms';
 })
 export class EventsFormComponent {
   eventForm = this.formBuilder.group({
-    title: [''],
-    date: [''],
-    time: [''],
+    title: ['', Validators.required],
+    date: ['', Validators.required],
+    time: ['', Validators.required],
     region: [''],
-    location: [''],
-    attendeeMax: [''],
-    eventDescription: ['']
+    location: ['', Validators.required],
+    attendeeMax: ['', Validators.required],
+    eventDescription: ['', Validators.required]
   });
 
   @Output() formSubmitted = new EventEmitter();
@@ -26,7 +26,7 @@ export class EventsFormComponent {
   onSubmit(){
     this.formSubmitted.emit(this.formClose);
     this.submittedData.emit(this.eventForm.value);
-
+    
     // later update to send data to backend
   }
 }

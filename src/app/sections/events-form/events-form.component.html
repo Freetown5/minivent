@@ -29,5 +29,5 @@
             formControlName="eventDescription"
         ></textarea>
     </div>
-    <button (click)="onSubmit()">Submit</button>
+    <button (click)="onSubmit()" [disabled]="eventForm.invalid">Submit</button>
 </form>

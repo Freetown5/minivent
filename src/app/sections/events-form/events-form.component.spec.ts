@@ -61,14 +61,27 @@ describe('EventsFormComponent', () => {
     expect(eventDescStub.value).toEqual(description);
   });
 
-  it('should add data to the event form', () => {
-    component.eventForm.controls['title'].setValue('Ang');
-    component.eventForm.controls['date'].setValue('07/02/2024');
-    component.eventForm.controls['time'].setValue('8:30am');
-    component.eventForm.controls['region'].setValue('Soho');
-    component.eventForm.controls['location'].setValue('New York, NY');
-    component.eventForm.controls['attendeeMax'].setValue('9');
-    component.eventForm.controls['eventDescription'].setValue('This would contain all of the details for an event');
+  it('should add data to the event form and pass validation', () => {
+    let mockTitle = component.eventForm.controls['title']
+    mockTitle.setValue('Ang');
+
+    let mockDate = component.eventForm.controls['date']
+    mockDate.setValue('07/02/2024');
+
+    let mockTime = component.eventForm.controls['time']
+    mockTime.setValue('8:30am');
+
+    let mockRegion = component.eventForm.controls['region']
+    mockRegion.setValue('Soho');
+
+    let mockLoc = component.eventForm.controls['location']
+    mockLoc.setValue('New York, NY');
+
+    let mockMax = component.eventForm.controls['attendeeMax']
+    mockMax.setValue('9');
+
+    let mockDesc = component.eventForm.controls['eventDescription']
+    mockDesc.setValue('This would contain all of the details for an event');
 
     let testEventForm = {
       title: 'Ang',
@@ -82,5 +95,39 @@ describe('EventsFormComponent', () => {
 
     component.onSubmit();
     expect(component.eventForm.value).toEqual(testEventForm);
-  })
+
+    expect(mockTitle.valid).toBeTruthy();
+    expect(mockDate.valid).toBeTruthy();
+    expect(mockTime.valid).toBeTruthy();
+    expect(mockLoc.valid).toBeTruthy();
+    expect(mockMax.valid).toBeTruthy();
+    expect(mockDesc.valid).toBeTruthy();
+  });
+
+  it('should fail validation when some of the inputs are blank', () => {
+    let mockTitle = component.eventForm.controls['title']
+    mockTitle.setValue('');
+
+    let mockDate = component.eventForm.controls['date']
+    mockDate.setValue('');
+
+    let mockTime = component.eventForm.controls['time']
+    mockTime.setValue('');
+
+    let mockLoc = component.eventForm.controls['location']
+    mockLoc.setValue('');
+
+    let mockMax = component.eventForm.controls['attendeeMax']
+    mockMax.setValue('');
+
+    let mockDesc = component.eventForm.controls['eventDescription']
+    mockDesc.setValue('');
+
+    expect(mockTitle.valid).toBeFalsy();
+    expect(mockDate.valid).toBeFalsy();
+    expect(mockTime.valid).toBeFalsy();
+    expect(mockLoc.valid).toBeFalsy();
+    expect(mockMax.valid).toBeFalsy();
+    expect(mockDesc.valid).toBeFalsy();
+  });
 });
