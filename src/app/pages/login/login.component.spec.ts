@@ -23,9 +23,11 @@ describe('LoginComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should add data to the login form', () => {
-    component.loginForm.controls['email'].setValue('test-user@gmail.com');
-    component.loginForm.controls['password'].setValue('@#PFE^60-!');
+  it('should add data to the login form and pass validation', () => {
+    let mockMail = component.loginForm.controls['email']
+    mockMail.setValue('test-user@gmail.com');
+    let mockPass = component.loginForm.controls['password']
+    mockPass.setValue('@#PFE^60-!');
 
     let testLoginForm = {
       email: 'test-user@gmail.com',
@@ -35,5 +37,25 @@ describe('LoginComponent', () => {
     component.onSubmit();
 
     expect(component.loginForm.value).toEqual(testLoginForm);
-  })
+    expect(mockMail.valid).toBeTruthy();
+    expect(mockPass.valid).toBeTruthy();
+  });
+
+  it('should fail validation when inputs are blank', () => {
+    let mockMail = component.loginForm.controls['email'];
+    let mockPass = component.loginForm.controls['password'];
+    expect(mockMail.valid).toBeFalsy();
+    expect(mockPass.valid).toBeFalsy();
+  });
+
+  it('should fail validation when inputs don\'t match validation arguments', () => {
+    let mockMail = component.loginForm.controls['email']
+    mockMail.setValue('dsfsdfsd');
+
+    let mockPass = component.loginForm.controls['password']
+    mockPass.setValue('32q');
+    
+    expect(mockMail.valid).toBeFalsy();
+    expect(mockMail.valid).toBeFalsy();
+  });
 });
