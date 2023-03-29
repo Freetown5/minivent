@@ -6,5 +6,21 @@
         <p class="event__detailsTrunc">{{ details }}</p>
         <p class="event__region">{{ region }}</p>
         <p class="event__attendees">{{ attendeeTotal }}/{{ attendeeMax }}</p>
+        <button *ngIf="formOpen===false" (click)="toggleForm()">Add Attendee</button>
+        <form [formGroup]="attendeeForm" *ngIf="formOpen===true">
+            <input 
+                id="first-name" 
+                type="text" 
+                placeholder="First Name" 
+                formControlName="firstName"
+            >
+            <input 
+                id="last-name" 
+                type="text" 
+                placeholder="Last Name" formControlName="lastName"
+            >
+            <button [disabled]="attendeeForm.invalid" (click)="submitForm()">Add Attendee</button>
+            <button (click)="toggleForm()">Cancel</button>
+        </form>
     </div>
 </div>
