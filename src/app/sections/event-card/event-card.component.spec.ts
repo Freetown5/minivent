@@ -71,4 +71,56 @@ describe('EventCardComponent', () => {
     component.attendeeTotal;
     expect(component.attendeesSum).toBe(2); 
   });
+
+  describe('attendeeForm', () => {
+    it('should add data to the attendee form object used in the template and pass validation', () =>{
+      let mockNewAttendee = {
+        firstName: "Ketanji",
+        lastName: "Brown-Jackson"
+      }
+  
+      let mockFirst = component.attendeeForm.controls['firstName'];
+      mockFirst.setValue("Ketanji");
+  
+      let mockLast = component.attendeeForm.controls['lastName'];
+      mockLast.setValue("Brown-Jackson");
+  
+      expect(component.attendeeForm.value).toEqual(mockNewAttendee);
+      expect(mockFirst.valid).toBeTruthy();
+      expect(mockLast.valid).toBeTruthy();
+    });
+
+    it('should fail validation when inputs are blank', () => {
+      let mockFirst = component.attendeeForm.controls['firstName'];
+      mockFirst.setValue("");
+
+      let mockLast = component.attendeeForm.controls['lastName'];
+      mockLast.setValue("");
+
+      expect(mockFirst.valid).toBeFalsy();
+      expect(mockLast.valid).toBeFalsy();
+    });
+  });
+
+  describe('onSubmit method', () => {
+    it('should toggle the formOpen value to false', () => {
+      component.formOpen = true;
+      component.submitForm();
+      expect(component.formOpen).toBeFalsy();
+    });
+  });
+
+  describe('toggleForm method', () => {
+    it('should toggle the form open', () => {
+      component.formOpen = false;
+      component.toggleForm();
+      expect(component.formOpen).toBeTruthy();
+    });
+
+    it('should toggle the form closed', () => {
+      component.formOpen = true;
+      component.toggleForm();
+      expect(component.formOpen).toBeFalsy();
+    })
+  });
 });
